@@ -1,0 +1,32 @@
+.btn-ghost {
+  border: none;
+  background: transparent;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.btn-ghost:hover {
+  background: rgba(2, 6, 23, 0.06);
+}
+
+.btn-primary {
+  border: none;
+  background: #0f172a; /* slate-900 */
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+.btn-ghost:disabled,
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
