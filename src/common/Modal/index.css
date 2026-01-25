@@ -1,0 +1,119 @@
+/* Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* backdrop */
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: saturate(180%) blur(4px);
+
+  /* fade in */
+  animation: modal-fade-in 150ms ease-out;
+}
+
+/* Container controls width + entrance zoom */
+.modal-container {
+  width: 100%;
+  margin: 0 16px;
+  display: flex;
+  justify-content: center;
+  animation: modal-zoom-in 150ms ease-out;
+}
+
+/* Sizes */
+.modal-size-sm {
+  max-width: 24rem;
+} /* ~384px */
+.modal-size-md {
+  max-width: 28rem;
+} /* ~448px */
+.modal-size-lg {
+  max-width: 42rem;
+} /* ~672px */
+.modal-size-xl {
+  max-width: 64rem;
+} /* ~1024px */
+
+/* Panel */
+.modal-panel {
+  width: 100%;
+  background: #ffffff;
+  color: #0f172a; /* slate-900 */
+  border-radius: 1rem; /* 16px */
+  box-shadow: 0 20px 45px rgba(2, 6, 23, 0.18);
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Header */
+.modal-header {
+  padding: 20px 20px 0 20px;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 1.125rem; /* 18px */
+  font-weight: 600;
+  letter-spacing: 0.0025em;
+}
+
+.modal-description {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: #475569; /* slate-600 */
+}
+
+/* Body */
+.modal-body {
+  padding: 16px 20px 20px 20px;
+}
+
+/* Footer */
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 20px;
+  border-top: 1px solid #e2e8f0; /* slate-200 */
+}
+
+/* Animations */
+@keyframes modal-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-zoom-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Dark mode (auto nếu user bật) */
+@media (prefers-color-scheme: dark) {
+  .modal-panel {
+    background: #0b1220; /* slate-900-ish */
+    color: #e2e8f0; /* slate-200 */
+    border: 1px solid rgba(148, 163, 184, 0.12);
+  }
+  .modal-description {
+    color: #cbd5e1; /* slate-300 */
+  }
+  .modal-footer {
+    border-top-color: #0f172a; /* dark border */
+  }
+}
